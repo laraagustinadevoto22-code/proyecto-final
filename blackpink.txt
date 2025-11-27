@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blackpink Fan Blog</title>
+  <style>
+    :root{--pink:#ff2d88;--dark:#0b0b0b;--muted:#f4f4f4;--card:#111}
+    *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+    body{margin:0;background:linear-gradient(180deg,#050505 0%, #120012 60%);color:var(--muted)}
+    header{background:linear-gradient(90deg,var(--pink),#8b0056);padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .dot{width:46px;height:46px;border-radius:8px;background:linear-gradient(45deg,#fff 0%, rgba(255,255,255,.07) 100%);display:flex;align-items:center;justify-content:center;color:#000;font-weight:700}
+    h1{margin:0;font-size:20px}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    .tab{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;cursor:pointer;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+    .tab.active{background:linear-gradient(90deg,var(--pink),#c02e7a);box-shadow:0 6px 18px rgba(0,0,0,.6);color:#fff}
+    main{padding:28px}
+    .container{max-width:1200px;margin:0 auto}
+
+    /* layout */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .hero{display:flex;gap:18px;align-items:center}
+    .hero img{width:220px;height:220px;object-fit:cover;border-radius:12px;border:4px solid rgba(255,255,255,0.04)}
+    .hero h2{margin:0 0 6px 0}
+    .meta{color:#ddd;opacity:.9}
+
+    /* carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:10px}
+    .carousel-track{display:flex;transition:transform .5s ease}
+    .carousel-slide{min-width:100%;padding:10px}
+    .carousel img{width:100%;height:320px;object-fit:cover;border-radius:8px}
+    .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 10px}
+    .carousel button{background:rgba(0,0,0,.45);border:0;color:#fff;padding:8px;border-radius:8px;cursor:pointer}
+
+    /* lists */
+    ul.clean{list-style:none;padding:0;margin:0}
+    ul.clean li{padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.03)}
+
+    /* wattpad cards */
+    .wattpad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .wp-card{background:linear-gradient(180deg,#0f0f0f,#161216);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .18s}
+    .wp-card:hover{transform:translateY(-6px)}
+    .wp-card h3{margin:6px 0 0 0}
+    .wp-card p{opacity:.8;font-size:14px}
+
+    /* responsive */
+    @media (max-width:980px){.grid{grid-template-columns:1fr} .hero img{display:none}}
+
+    footer{margin-top:28px;padding:24px;background:#070007;color:#ddd;border-top:1px solid rgba(255,255,255,0.04)}
+    .socials{display:flex;gap:10px}
+    .btn{background:var(--pink);color:#111;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:#fff}
+
+    /* footer json */
+    pre.json{background:#060406;color:#f4f4f4;padding:10px;border-radius:8px;max-height:260px;overflow:auto}
+
+    /* small helpers */
+    .small{font-size:13px;color:#d6d6d6}
+    .links a{color:var(--pink);text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="dot">BP</div>
+      <div>
+        <h1>Blackpink Fan Blog</h1>
+        <div class="small">Rosa & Negro — Fan-made</div>
+      </div>
+    </div>
+
+    <nav id="tabs">
+      <div class="tab active" data-tab="blackpink">Blackpink</div>
+      <div class="tab" data-tab="lisa">Lisa</div>
+      <div class="tab" data-tab="jennie">Jennie</div>
+      <div class="tab" data-tab="jisoo">Jisoo</div>
+      <div class="tab" data-tab="rose">Rosé</div>
+      <div class="tab" data-tab="musica">Música</div>
+      <div class="tab" data-tab="videos">Videos</div>
+      <div class="tab" data-tab="peliculas">Películas</div>
+      <div class="tab" data-tab="series">Series</div>
+      <div class="tab" data-tab="cameos">Cameos</div>
+      <div class="tab" data-tab="wattpad">Wattpad</div>
+      <button class="btn" id="subscribeBtn">Suscribirse</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Blackpink tab -->
+    <section class="tab-content" id="blackpink" style="display:block">
+      <div class="grid">
+        <div>
+          <div class="card hero">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="Blackpink">
+            <div>
+              <h2>Blackpink</h2>
+              <div class="meta">Debut: 8 de agosto de 2016 • Agencia: YG Entertainment</div>
+              <p style="margin-top:12px;color:#eee;line-height:1.5">Blackpink es uno de los grupos femeninos de K-pop con mayor impacto global: récords digitales, colaboraciones internacionales, campañas de moda y giras mundiales. Este blog recopila su historia, discografía, videografía y contenido exclusivo.</p>
+              <div style="margin-top:12px" class="links">
+                <a href="#" class="ghost">Biografía completa</a>
+                <a href="#" class="ghost" style="margin-left:8px">Cronología</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:18px">
+            <h3>Discografía (YG)</h3>
+            <ul class="clean">
+              <li>Square Up (2018) — EP</li>
+              <li>Kill This Love (2019) — EP</li>
+              <li>The Album (2020) — Álbum</li>
+              <li>Born Pink (2022) — Álbum</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:18px">
+            <h3>Quick Facts</h3>
+            <ul class="clean">
+              <li>Género: K-pop / Pop</li>
+              <li>Miembros: Lisa, Jennie, Jisoo, Rosé</li>
+              <li>Idiomas: Coreano, Inglés, Japonés</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Redes & Contacto</h3>
+            <div class="socials" style="margin-top:8px">
+              <a href="#" title="Instagram"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><rect width='28' height='28' rx='6' fill='%23ff2d88'/><text x='50%' y='55%' font-size='12' text-anchor='middle' fill='white' font-family='Arial'>ig</text></svg>"></a>
+              <a href="#" title="Twitter"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><rect width='28' height='28' rx='6' fill='%231da1f2'/><text x='50%' y='55%' font-size='12' text-anchor='middle' fill='white' font-family='Arial'>tw</text></svg>"></a>
+              <a href="#" title="YouTube"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><rect width='28' height='28' rx='6' fill='%23ff0000'/><text x='50%' y='55%' font-size='10' text-anchor='middle' fill='white' font-family='Arial'>yt</text></svg>"></a>
+            </div>
+
+            <div style="margin-top:12px">
+              <button class="btn" id="playAll">Reproducir música</button>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h4>Últimas noticias</h4>
+            <p class="small">Aquí se pueden integrar feeds en vivo o un widget para noticias y redes.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h3>Carrusel destacado</h3>
+        <div class="carousel">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src=""></div>
+            <div class="carousel-slide"><img src=""></div>
+            <div class="carousel-slide"><img src=""></div>
+          </div>
+          <div class="nav"><button data-action="prev">◀</button><button data-action="next">▶</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Member tabs (template repeated) -->
+    <section class="tab-content" id="lisa" style="display:none">
+      <div class="grid">
+        <div>
+          <div class="card hero">
+            <img src="img/Lisa/Lisa.jpg" alt="Lisa">
+            <div>
+              <h2>Lisa (Lalisa Manoban)</h2>
+              <div class="meta">Nacida: 27 mar 1997 • Tailandesa</div>
+              <p style="margin-top:10px">Rapera principal y bailarina. Debutó con Blackpink en 2016 y lanzó su carrera solista con éxitos globales.</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Discografía solista</h3>
+            <ul class="clean">
+              <li>Alter Ego (Álbum de estudio)</li>
+              <li>LALISA (single)</li>
+              <li>MONEY (single)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Participaciones</h3>
+            <ul class="clean">
+              <li>SG (con Ozuna, Megan Thee Stallion y DJ Snake)</li>
+              <li>Shoong! (con Taeyang)</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Galería</h4>
+            <div class="carousel" data-carousel="lisa">
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="img/Lisa/Louis.webp"></div>
+                <div class="carousel-slide"><img src="img/Lisa/gulgari.jpg"></div>
+                <div class="carousel-slide"><img src="img/Lisa/Celine.jpg"></div>
+              </div>
+              <div class="nav"><button data-action="prev">◀</button><button data-action="next">▶</button></div>
+            </div>
+
+            <div style="margin-top:12px" class="small">Marcas: Celine, BVLGARI, Louis Vuitton</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tab-content" id="jennie" style="display:none">
+      <div class="grid">
+        <div>
+          <div class="card hero">
+            <img src="img/Jennie/jennie 2.jpeg" alt="Jennie">
+            <div>
+              <h2>Jennie</h2>
+              <div class="meta">Nacida: 16 ene 1996 • Corea del Sur</div>
+              <p style="margin-top:10px">Rapper & vocalist. Debutó en Blackpink y luego lanzó "Ruby" como proyecto solista.</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Discografía solista</h3>
+            <ul class="clean">
+              <li>Ruby (Álbum de estudio)</li>
+              <li>Singles/colaboraciones destacadas</li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Galería</h4>
+            <div class="carousel" data-carousel="jennie">
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="img/Jennie/Jennie channel.jpeg"></div>
+                <div class="carousel-slide"><img src="img/Jennie/clavin klein.png"></div>
+              </div>
+              <div class="nav"><button data-action="prev">◀</button><button data-action="next">▶</button></div>
+            </div>
+
+            <div style="margin-top:12px" class="small">Marcas: Chanel, Calvin Klein</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tab-content" id="jisoo" style="display:none">
+      <div class="grid">
+        <div>
+          <div class="card hero">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=bbbb" alt="Jisoo">
+            <div>
+              <h2>Jisoo</h2>
+              <div class="meta">Nacida: 3 ene 1995 • Corea del Sur</div>
+              <p style="margin-top:10px">Vocalista y actriz: protagonizó "Snowdrop" y participó en proyectos cinematográficos.</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Discografía solista</h3>
+            <ul class="clean">
+              <li>Amortage (Mini-álbum)</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Galería</h4>
+            <div class="carousel" data-carousel="jisoo">
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=cccc"></div>
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1485546116054-9c8f66d3c6be?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=dddd"></div>
+              </div>
+              <div class="nav"><button data-action="prev">◀</button><button data-action="next">▶</button></div>
+            </div>
+
+            <div style="margin-top:12px" class="small">Marcas: Dior, Cartier</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tab-content" id="rose" style="display:none">
+      <div class="grid">
+        <div>
+          <div class="card hero">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba6b4f0b3d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=eeee" alt="Rosé">
+            <div>
+              <h2>Rosé</h2>
+              <div class="meta">Nacida: 11 feb 1997 • Australia / Corea</div>
+              <p style="margin-top:10px">Vocalista principal y guitarrista. Su trabajo solista incluye el álbum "Rosie".</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Discografía solista</h3>
+            <ul class="clean">
+              <li>Rosie (Álbum)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Soundtracks & Participaciones</h3>
+            <ul class="clean">
+              <li>F1: La Película (soundtrack)</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Galería</h4>
+            <div class="carousel" data-carousel="rose">
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=ffff"></div>
+                <div class="carousel-slide"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=gggg"></div>
+              </div>
+              <div class="nav"><button data-action="prev">◀</button><button data-action="next">▶</button></div>
+            </div>
+
+            <div style="margin-top:12px" class="small">Marcas: Saint Laurent, Tiffany & Co.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Música tab -->
+    <section class="tab-content" id="musica" style="display:none">
+      <div class="card">
+        <h3>Música de Blackpink</h3>
+        <p class="small">Discografía grupal y enlaces a plataformas (ejemplo).</p>
+        <ul class="clean">
+          <li><a href="#">Square Up (2018) — Spotify</a></li>
+          <li><a href="#">Kill This Love (2019) — Spotify</a></li>
+          <li><a href="#">The Album (2020) — Spotify</a></li>
+          <li><a href="#">Born Pink (2022) — Spotify</a></li>
+        </ul>
+
+        <h4 style="margin-top:12px">Música solista (enlaces)</h4>
+        <ul class="clean">
+          <li><a href="#">Lisa — LALISA / MONEY — Spotify</a></li>
+          <li><a href="#">Jennie — Ruby — Spotify</a></li>
+          <li><a href="#">Jisoo — Amortage — Spotify</a></li>
+          <li><a href="#">Rosé — Rosie — Spotify</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Videos tab -->
+    <section class="tab-content" id="videos" style="display:none">
+      <div class="card">
+        <h3>Videos oficiales</h3>
+        <p class="small">Enlaces a YouTube y videoclips.</p>
+        <ul class="clean">
+          <li><a href="#">DDU-DU DDU-DU — Video Oficial</a></li>
+          <li><a href="#">Kill This Love — Video Oficial</a></li>
+          <li><a href="#">How You Like That — Video Oficial</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Peliculas tab -->
+    <section class="tab-content" id="peliculas" style="display:none">
+      <div class="card">
+        <h3>Películas & Documentales</h3>
+        <ul class="clean">
+          <li>Blackpink: The Movie</li>
+          <li>Light Up the Sky (Documental en Netflix)</li>
+          <li>F1: La Película — Soundtrack (Rosé)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Series tab -->
+    <section class="tab-content" id="series" style="display:none">
+      <div class="card">
+        <h3>Series</h3>
+        <ul class="clean">
+          <li>Snowdrop (Jisoo)</li>
+          <li>Newtopia (Jisoo)</li>
+          <li>The White Lotus — Temporada 3 (Lisa)</li>
+          <li>Apartment 404, The Idol (Jennie)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Cameos -->
+    <section class="tab-content" id="cameos" style="display:none">
+      <div class="card">
+        <h3>Cameos</h3>
+        <ul class="clean">
+          <li>Blackpink en YG Future Strategy Office</li>
+          <li>Jennie en Running Man</li>
+          <li>Lisa en Real Men 300</li>
+          <li>Rosé en King of Masked Singer</li>
+          <li>Jisoo cameo en The Producers</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Wattpad tab -->
+    <section class="tab-content" id="wattpad" style="display:none">
+      <div class="card">
+        <h3>Wattpad — Fanfiction & Historias</h3>
+        <p class="small">Historias destacadas creadas por fans. Haz clic para abrir cada historia.</p>
+        <div class="wattpad-grid">
+          <div class="wp-card" onclick="openW('https://www.wattpad.com/story/1')">
+            <h3>Pink Stardust</h3>
+            <p>AU donde Blackpink viaja a un festival intergaláctico.</p>
+          </div>
+          <div class="wp-card" onclick="openW('https://www.wattpad.com/story/2')">
+            <h3>Ruby & Alter</h3>
+            <p>Historia centrada en Jennie y Lisa: tensiones creativas y amistad.</p>
+          </div>
+          <div class="wp-card" onclick="openW('https://www.wattpad.com/story/3')">
+            <h3>Stage of Roses</h3>
+            <p>Rosé en gira, encuentros y canciones inéditas.</p>
+          </div>
+          <div class="wp-card" onclick="openW('https://www.wattpad.com/story/4')">
+            <h3>Seoul Nights</h3>
+            <p>Jisoo y la vida detrás de cámaras en una serie dramática.</p>
+          </div>
+          <div class="wp-card" onclick="openW('https://www.wattpad.com/story/5')">
+            <h3>Blackpink: The Untold</h3>
+            <p>Crónica ficcionalizada del ascenso a la fama.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px">
+            <h3>Blackpink Fan Blog</h3>
+            <p class="small">Proyecto fan — información compilada. Usa este sitio para publicar, compartir y enriquecer la comunidad.</p>
+            <div style="margin-top:10px" class="socials">
+              <a href="#" class="ghost">Instagram</a>
+              <a href="#" class="ghost">Twitter</a>
+              <a href="#" class="ghost">YouTube</a>
+            </div>
+          </div>
+          
+    </footer>
+  </main>
+
+  <!-- Subscribe modal -->
+  <div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6)">
+    <div style="background:#0e0b0e;padding:18px;border-radius:12px;max-width:420px;width:100%;border:1px solid rgba(255,255,255,.04)">
+      <h3>Suscribite</h3>
+      <p class="small">Recibí noticias, lanzamientos y acceso anticipado.</p>
+      <input id="email" placeholder="Tu email" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);background:#070507;color:#fff;margin-top:8px">
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn" id="confirmSub">Confirmar</button>
+        <button class="ghost" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // simple tab system
+    document.querySelectorAll('#tabs .tab').forEach(t=>t.addEventListener('click',()=>{
+      document.querySelectorAll('#tabs .tab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(s=>s.style.display='none');
+      document.getElementById(t.dataset.tab).style.display='block';
+    }))
+
+    // carousels
+    function initCarousel(root){
+      const track = root.querySelector('.carousel-track');
+      const slides = track.children; let index=0;
+      root.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('click',e=>{
+        if(e.target.dataset.action==='next'){ index=(index+1)%slides.length }
+        else { index = (index-1+slides.length)%slides.length }
+        track.style.transform = `translateX(-${index*100}%)`;
+      }))
+    }
+    document.querySelectorAll('.carousel').forEach(initCarousel);
+
+    // per-member carousels
+    document.querySelectorAll('[data-carousel]').forEach(initCarousel);
+
+    // subscribe modal
+    const modal = document.getElementById('modal');
+    document.getElementById('subscribeBtn').addEventListener('click',()=>modal.style.display='flex');
+    function closeModal(){modal.style.display='none'}
+    document.getElementById('confirmSu b').addEventListener('click',()=>{alert('Gracias por suscribirte!');closeModal()});
+
+    // open wattpad
+    function openW(url){ window.open(url,'_blank') }
+    window.openW = openW;
+
+    
+  
+    document.getElementById('jsonData').textContent = jsonExample;
+  </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Blackpink Fan Page</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: url('https://i.ibb.co/0j0bY3F/blackpink-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+    }
+
+    .overlay {
+        background-color: rgba(0,0,0,0.7);
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 8rem;
+        margin: 0;
+        color: #ff0080;
+        text-shadow: 2px 2px 10px #000;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 20px 0;
+        color: #ff66b2;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 10px 0 30px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ff0080;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(255,0,128,0.4);
+    }
+
+    .btn:hover {
+        background-color: #ff66b2;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(255,0,128,0.5);
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+        color: #fff;
+        font-size: 2rem;
+        transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #ff0080;
+        transform: scale(1.2);
+    }
+
+    @media(max-width:768px){
+        h1 { font-size: 5rem; }
+        h2 { font-size: 1.5rem; }
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<div class="overlay">
+    <h1>404</h1>
+    <h2>¡Oops! Página no encontrada</h2>
+    <p>Parece que Lisa, Jennie, Jisoo y Rosé se llevaron esta página...</p>
+    <a href="index.html" class="btn">Volver al Inicio</a>
+    <a href="https://www.youtube.com/BLACKPINK" target="_blank" class="btn">Ver Videos</a>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/blackpinkofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/BLACKPINK" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+{
+  "BLACKPINK": {
+    "nombre": "Blackpink",
+    "debut": "2016-08-08",
+    "agencia": "YG Entertainment",
+    "descripcion": "Blackpink es un grupo femenino surcoreano formado por YG Entertainment.",
+
+    "miembros": [
+      {
+        "nombre": "Lisa",
+        "nombre_real": "Lalisa Manoban",
+        "nacimiento": "1997-03-27",
+        "nacionalidad": "Tailandesa",
+        "rol": "Rapera principal, bailarina principal, vocalista, maknae",
+        "biografia": "Lisa nació en Tailandia y se convirtió en la primera integrante extranjera de YG Entertainment.",
+        "sello_solista": "LLOUD",
+
+        "discografia_solista": {
+          "albums": [
+            {
+              "titulo": "Alter Ego",
+              "tipo": "Álbum de estudio",
+              "canciones": [
+                "Rockstar",
+                "Elastigirl",
+                "Thunder",
+                "New Woman (featuring Rosalía)",
+                "Fxck Up the World (Vixi solo version)",
+                "Rapunzel (Kiki solo version)",
+                "Moonlit Floor (Kiss Me)",
+                "When I'm with You (featuring Tyla)",
+                "Badgrrrl",
+                "Lifestyle",
+                "Chill",
+                "Dream"
+              ],
+              "bonus_digital": [
+                "Born Again (featuring Doja Cat and Raye)",
+                "Fxck Up the World (featuring Future)",
+                "Rapunzel (featuring Megan Thee Stallion)"
+              ]
+            }
+          ]
+        },
+
+        "musica_participaciones": [
+          "SG (con Ozuna, Megan Thee Stallion y DJ Snake)",
+          "Shoong! (con Taeyang)",
+          "LALISA (single)",
+          "MONEY"
+        ],
+
+        "series": [
+          "The White Lotus - Temporada 3"
+        ],
+
+        "peliculas": [],
+
+        "moda": {
+          "embajadora_global": ["Celine", "BVLGARI", "Louis Vuitton"]
+        },
+
+        "mascotas": [
+          { "nombre": "Lily", "tipo": "gato" },
+          { "nombre": "Luca", "tipo": "gato" },
+          { "nombre": "Leo", "tipo": "gato" },
+          { "nombre": "Lego", "tipo": "gato" },
+          { "nombre": "Louis", "tipo": "gato" },
+          { "nombre": "Love", "tipo": "perro" },
+          { "nombre": "Hunter", "tipo": "gato", "estado": "fallecido" },
+          { "nombre": "Tiga", "tipo": "gato" },
+          { "nombre": "Lola", "tipo": "perro" }
+        ]
+      },
+
+      {
+        "nombre": "Jennie",
+        "nombre_real": "Jennie Kim",
+        "nacimiento": "1996-01-16",
+        "nacionalidad": "Surcoreana",
+        "rol": "Rapera principal, vocalista",
+        "biografia": "Jennie fue la primera miembro en debutar como solista y es una de las figuras más influyentes de la moda global.",
+        "sello_solista": "Odd Atelier (OA)",
+
+        "discografia_solista": {
+          "albums": [
+            {
+              "titulo": "Ruby",
+              "tipo": "Álbum de estudio",
+              "canciones": [
+                "Intro: Jane (con FKJ)",
+                "Like Jennie",
+                "Start a War",
+                "Handlebars (con Dua Lipa)",
+                "With the IE (Way Up)",
+                "ExtraL (con Doechii)",
+                "Mantra",
+                "Love Hangover (con Dominic Fike)",
+                "Zen",
+                "Damn Right (con Childish Gambino y Kali Uchis)",
+                "F.T.S.",
+                "Filter",
+                "Seoul City",
+                "Starlight",
+                "Twin"
+              ]
+            }
+          ]
+        },
+
+        "musica_participaciones": [
+          "Solo (single)",
+          "You & Me",
+          "One of the Girls (con The Weeknd y Lily-Rose Depp)",
+          "Special (con Lee Hyori)"
+        ],
+
+        "series": [
+          "Apartment 404",
+          "The Idol"
+        ],
+
+        "peliculas": [],
+
+        "moda": {
+          "embajadora_global": ["Chanel", "Calvin Klein"]
+        },
+
+        "mascotas": [
+          { "nombre": "Kai", "tipo": "perro", "estado": "fallecido" },
+          { "nombre": "Kuma", "tipo": "perro" }
+        ]
+      },
+
+      {
+        "nombre": "Jisoo",
+        "nombre_real": "Kim Ji-soo",
+        "nacimiento": "1995-01-03",
+        "nacionalidad": "Surcoreana",
+        "rol": "Vocalista principal, visual",
+        "biografia": "Jisoo es conocida por su elegancia, su dulce voz y su destacada carrera como actriz.",
+        "sello_solista": "BLISSOO",
+
+        "discografia_solista": {
+          "albums": [
+            {
+              "titulo": "Amortage",
+              "tipo": "Mini Álbum",
+              "canciones": [
+                "Earthquake",
+                "Your Love",
+                "Tears",
+                "Hugs & Kisses"
+              ]
+            }
+          ]
+        },
+
+        "musica_participaciones": [
+          "Flower (single)",
+          "All Eyes on Me (single)",
+          "Clarity (no oficial)"
+        ],
+
+        "series": [
+          "Snowdrop",
+          "Newtopia"
+        ],
+
+        "peliculas": [
+          "Omniscient Reader: The Prophet",
+          "Dr. Cheon and Lost Talisman"
+        ],
+
+        "moda": {
+          "embajadora_global": ["Dior", "Cartier"]
+        },
+
+        "mascotas": [
+          { "nombre": "Dalgom", "tipo": "perro" }
+        ]
+      },
+
+      {
+        "nombre": "Rosé",
+        "nombre_real": "Park Chae-young",
+        "nacimiento": "1997-02-11",
+        "nacionalidad": "Australia - Corea del Sur",
+        "rol": "Vocalista principal, guitarrista",
+        "biografia": "Rosé es reconocida por su voz inigualable, su sensibilidad artística y su presencia global.",
+        "sello_solista": "ROSÉ Studios",
+
+        "discografia_solista": {
+          "albums": [
+            {
+              "titulo": "Rosie",
+              "tipo": "Álbum",
+              "canciones": [
+                "Number One Girl",
+                "3am",
+                "Two Years",
+                "Toxic Till the End",
+                "Drinks or Coffee",
+                "Apt. (con Bruno Mars)",
+                "Brody",
+                "Gameboy",
+                "Stay a Little Longer",
+                "Not the Same",
+                "Call It the End",
+                "Too Bad for Us",
+                "Dance All Night"
+              ]
+            }
+          ]
+        },
+
+        "musica_participaciones": [
+          "Gone (single)",
+          "On the Ground (single)",
+          "Without You (G-Dragon)",
+          "Viva La Vida (cover)",
+          "Until I Found You (cover)",
+          "F1: La Película (soundtrack)"
+        ],
+
+        "series": [],
+        "peliculas": [
+          "F1: La Película (soundtrack)"
+        ],
+
+        "moda": {
+          "embajadora_global": ["Saint Laurent", "Tiffany & Co."]
+        },
+
+        "mascotas": [
+          { "nombre": "Hank", "tipo": "perro" },
+          { "nombre": "Joo Hwang", "tipo": "pez", "estado": "fallecido" }
+        ]
+      }
+    ],
+
+    "discografia_grupal": {
+      "YG": [
+        { "titulo": "Square Up", "anio": 2018, "tipo": "EP" },
+        { "titulo": "Kill This Love", "anio": 2019, "tipo": "EP" },
+        { "titulo": "The Album", "anio": 2020, "tipo": "Álbum" },
+        { "titulo": "Born Pink", "anio": 2022, "tipo": "Álbum" }
+      ]
+    },
+
+    "series_grupales": [
+      "Blackpink House",
+      "Blackpink Diaries",
+      "24/365 with Blackpink"
+    ],
+
+    "peliculas_grupales": [
+      "Blackpink: The Movie",
+      "Light Up the Sky (Documental de Netflix)"
+    ],
+
+    "cameos_grupales_y_miembros": [
+      "Blackpink en 'YG Future Strategy Office' (cameo grupal)",
+      "Jennie en 'Running Man'",
+      "Lisa en 'Real Men 300'",
+      "Rosé en 'King of Masked Singer'",
+      "Jisoo cameo en 'The Producers'",
+      "Blackpink cameo en 'Infinite Challenge'"
+    ]
+  }
+}
